@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+import './index.css';
 import axios from 'axios';
 import MusicPage from './MusicPage';
-
+import SongsPage from './SongsPage';
+import Search from './Search';
 
 class App extends Component {
   constructor(){
@@ -10,46 +11,73 @@ class App extends Component {
     this.state={
         q: "",
         music: [],
-        dataLoaded: false
+        songs: [],
+        infoDataLoaded: false,
+        videoDataLoaded: false
     }
   }
   onChange=(e)=> {
   this.setState({
     q: e.target.value
-  }, console.log(this.state))
+  })
 }
 
-onSubmit=(e)=>{
+getInfo=(e)=>{
   e.preventDefault();
   axios.get('http://localhost:8080/search?q='+this.state.q)
       .then(res=>{
-        console.log(res.data.artists[0].strArtist)
+        // console.log(res.data.artists[0].strArtist)
         this.setState({
           music: res.data,
-          dataLoaded: true
-      }, ()=> console.log( this.state))
+          infoDataLoaded: true,
+      }, ()=> console.log(this.state))
   })
-  
+ }
+
+ getSongs=(e) => {
+   e.preventDefault();
+   axios.get('http://localhost:8080/songs/' + this.state.music.artists[0].idArtist)
+    .then(res =>{
+      console.log(res.data.mvids[0].strMusicVid)
+      this.setState({
+        songs: res.data,
+        videoDataLoaded: true
       }
+    , ()=> console.log(this.state))
+    })
+ }
     
 
   render() {
-    return (
-        <div>
-                <form onSubmit={this.onSubmit}>
-                    <p> Search Artist</p>
-                    <input value={this.state.q} name='q' onChange={this.onChange}/>
-                    <button type='submit'>Click here!</button>
-                </form>
+   let musicVid = this.state.videoDataLoaded ? this.state.songs.mvids.map((songs, i) =>{
+      return(songs.strMusicVid.split('='))
+    }) : null
 
-                <p>ARTIST INFO</p>
-                    
-             <div>
-                  {this.state.dataLoaded ? <MusicPage music={this.state.music} /> : null}
-                   
-               </div>
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/DHkbhQC1hDc" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-        </div>
+
+    console.log(musicVid);
+
+    return (
+        <div className ='app'>
+          <Search getInfo={this.getInfo} onChange={this.onChange} q={this.state.q} />
+          {this.state.infoDataLoaded ? <MusicPage music={this.state.music} songs={this.state.songs}/> : null }
+          { this.state.videoDataLoaded ? <SongsPage songs={this.state.songs} /> : null }
+          {this.state.videoDataLoaded ? musicVid.map(video=>{
+                        return (
+                            
+                              <iframe width="260" height="115" src={'https://www.youtube.com/embed/' + video[1]}
+                               frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen>
+                              </iframe>
+                            
+                        )
+                    })
+                    : null}
+          <form onSubmit={this.getSongs}>
+            <button type='submit'>ARTIST SONGS</button>
+          </form>
+          
+      </div>
+      
+        
       
     );
   }

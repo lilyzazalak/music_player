@@ -3,6 +3,8 @@ const request = require('request');
 const app = express();
 const bodyParser = require('body-parser');
 
+let music;
+
 app.use(bodyParser());
 
 app.use((req, res, next) => {
@@ -19,17 +21,32 @@ app.listen(8080, ()=>{
 
   app.get('/search', (req, res) => {
       let query = req.query.q.toLowerCase();
-    request('http://www.theaudiodb.com/api/v1/json/{APIKEY}/search.php?s=' + query,
+    request('http://www.theaudiodb.com/api/v1/json/{API}/search.php?s=' + query,
       function (error, response, body) {
         if (!error && response.statusCode == 200) {
-          let music = JSON.parse(body)
-        //   console.log(music);
+          music = JSON.parse(body)
           res.send(music);
-        }
-      });
-  });
+        }})
+    })
+app.get('/songs/:id', (req,res) => {
+    console.log("songs")
+    request('http://www.theaudiodb.com/api/v1/json/{API}/mvid.php?i=' + req.params.id,
+    function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        let songs = JSON.parse(body)
+        console.log(songs)
+        res.send(songs)
+      }
+    });
+})
+          
+        
+      
+  
 
-
+//   app.get('/songs', (req, res) => {
+  
+// });
 
 
   // spotify

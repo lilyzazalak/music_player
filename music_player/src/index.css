@@ -1,5 +1,32 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+body{
+  background-image: url('https://www.desktopbackground.org/download/o/2014/11/05/851355_cool-gradient-backgrounds-wallpaper_2560x1600_h.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+
+}
+
+/* .app{
+  width:65vw;
+  height:100vh; 
+  margin: 0 auto;
+  border-radius: 5%;
+  text-align: center;
+  overflow: overlay;
+} */
+
+.search-container{
+  margin: 0 auto;
+  text-align: center;
+  margin-top:5%;
+}
+
+.search-box{
+  width: 20vw;
+}
+
+.search-button{
+  margin-left:1%;
 }
