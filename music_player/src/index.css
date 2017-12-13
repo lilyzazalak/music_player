@@ -1,10 +1,5 @@
 body{
-  background-image: url('https://www.desktopbackground.org/download/o/2014/11/05/851355_cool-gradient-backgrounds-wallpaper_2560x1600_h.jpg');
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  position: relative;
+background-color: rgb(207, 48, 109);
 
 }
 
@@ -30,3 +25,4 @@ body{
 .search-button{
   margin-left:1%;
 }
+
