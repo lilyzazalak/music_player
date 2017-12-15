@@ -61,8 +61,8 @@ getInfo=(e)=>{
           <Switch>
              <Route path='/'exact render={()=> <Search getInfo={this.getInfo} onChange={this.onChange} q={this.state.q} infoDataLoaded={this.state.infoDataLoaded}/> } />
              <Route path='/page2' render={()=> <InfoPage music={this.state.music} songs={this.state.songs} infoDataLoaded ={this.state.infoDataLoaded}/> } /> 
-             <Route path='/page3' render={()=> <VideoPage songs={this.state.songs} getVideos={this.getVideos} videoDataLoaded ={this.state.videoDataLoaded}/> } />
-             <Route path='/page4' render={()=> <EventsPage music={this.state.music} q={this.state.q} />} /> 
+             <Route path='/page3' render={()=> <VideoPage music={this.state.music} songs={this.state.songs} getVideos={this.getVideos} videoDataLoaded ={this.state.videoDataLoaded} infoDataLoaded={this.state.infoDataLoaded}/> } />
+             <Route path='/page4' render={()=> <EventsPage music={this.state.music} q={this.state.q} infoDataLoaded={this.state.infoDataLoaded}/>} /> 
           </Switch>
         
         

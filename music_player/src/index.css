@@ -1,28 +1,314 @@
+*{
+  font-family: 'Source Code Pro', monospace;
+  
+}
 body{
-background-color: rgb(207, 48, 109);
-
+  background: url('./shoot-n-design-70930.jpg');
+  background-size: 100%;
 }
 
-/* .app{
-  width:65vw;
-  height:100vh; 
-  margin: 0 auto;
-  border-radius: 5%;
-  text-align: center;
-  overflow: overlay;
-} */
+/* SEARCH/MAIN PAGE*/
 
 .search-container{
   margin: 0 auto;
   text-align: center;
-  margin-top:5%;
+  width:100vw;
+  height:40vh;
+  background: url("./markus-spiske-78531-1.jpg");
+  background-size: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.search-form{
+  margin-top: 10vh;
+  margin-right:30vw;
+  text-shadow: 2px 2px 4px #00000057;
 }
 
 .search-box{
-  width: 20vw;
+  width: 40vw;
+  margin-top: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .search-button{
   margin-left:1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.search-button:hover{
+  color:rgb(7, 129, 156);
+}
+
+.app-name{
+  font-family: 'Sedgwick Ave Display', cursive;
+  font-size: 15em;
+  transform: rotate(-10deg);
+  margin-left:20vw;
+  margin-top:10vh;
+  text-shadow: 2px 2px 4px #00000057;
+}
+
+.nav-buttons-hidden{
+  display: none;
+
+}
+
+.link{
+  color:rgb(41, 40, 40);
+  width:5vw;
+}
+
+.link:hover{
+  text-decoration: none;
+  color:rgb(7, 129, 156);
+}
+
+.nav{
+  margin-left: 10vw;
+  width: 10vw;
+}
+
+.label{
+  text-shadow: 2px 2px 4px #000000c9;
+  margin-top: 20vh;
+  margin-left: 11.5vw;
+}
+
+.label2{
+  text-shadow: 2px 2px 4px #000000c9;
+  margin-top: 20vh;
+  margin-left: 10.5vw;
+}
+
+.nav-buttons1{
+  animation: bounceIn 1s;
+ 
+}
+
+.nav-buttons2{
+  animation: bounceIn 1.5s;
+}
+
+.nav-buttons3{
+  animation: bounceIn 2s;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* INFO PAGE */
+
+.info-container{
+  height:100vh;
+  background: url('./shoot-n-design-70930.jpg');
+  background-size: 100%;
+}
+
+.banner{
+  margin: 0 auto;
+  text-align: center;
+  background-size: 100%;
+  color:white;
+  text-shadow: 2px 2px 4px #00000057;
+}
+
+.banner-img{
+  border: 1.5px solid rgb(52, 53, 51);
+  border-radius: 2%;
+  margin-top:5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation: bounceIn 1s;
+}
+
+.info-list{
+  display:inline-block;
+  margin-top: 15vh;
+  margin-left: 10vw;
+  border: 2px solid rgba(7, 131, 156, 0.555);
+  background-color: rgba(235, 229, 229, 0.589);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation: bounceIn 1.3s;
+}
+
+ li{
+  padding:5%;
+  
+}
+
+b{
+  border-bottom: 1px solid white;
+}
+
+.bio-container{
+  height:50vh;
+  width: 37vw;
+  overflow: auto;
+  background-color: rgba(7, 131, 156, 0.555);
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: inline-block;
+  float:right;
+  margin-top: 5%;
+  margin-right:5%;
+  color:white;
+  text-shadow: 2px 2px 4px #00000057;
+  border-radius: 1%;
+  animation: bounceIn 1.5s;
+}
+
+.info-link{
+  color: rgb(39, 38, 38);
+}
+
+.info-link:hover{
+  color: rgb(7, 129, 156);
+}
+
+.link-button1{
+  margin-top: 8vh;
+  margin-left: 40vw;
+  animation: bounceIn 1.7s;
+}
+
+.link-button2{
+  margin-top: 8vh;
+  margin-left: 5vw;
+  animation: bounceIn 2s;
+}
+
+.back-button{
+  color: rgb(39, 38, 38);
+  margin-left:44vw;
+  margin-top: 3vh;
+  animation: bounceIn 2.3s;
+}
+
+.back-button:hover{
+  color: rgb(7, 129, 156);
+}
+
+/* VIDEO PAGE*/
+
+.video-title{
+  font-family: 'Sedgwick Ave Display', cursive;
+  font-size: 5em;
+  text-align: center;
+  margin-top: 5vh;
+  animation: bounceIn 1s;
+  text-shadow: 2px 2px 4px #00000057;
+}
+
+h3{
+  text-align: center;
+  animation: bounceIn 1.3s;
+  text-shadow: 2px 2px 4px #00000057;
+}
+
+.video-button{
+  margin-left: 45vw;
+  border: 1px solid black;
+  border-radius: 5%;
+  animation: bounceIn 1.3s;
+  background-color: rgb(7, 129, 156);
+}
+
+.video-button:hover{
+  background-color: rgb(250, 251, 252);
+}
+
+.back-button-video{
+  color: rgb(39, 38, 38);
+  margin-left:45vw;
+  margin-top: 3vh;
+  animation: bounceIn 2.3s;
+}
+
+.video{
+  margin:3%;
+  display: inline-block;
+  margin-left: 5%;
+}
+iframe{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border:1px solid white;
+}
+
+.back-button-video:hover{
+  color: rgb(7, 129, 156);
+}
+
+/* EVENTS PAGE*/
+
+.events-title{
+  font-family: 'Sedgwick Ave Display', cursive;
+  font-size: 5em;
+  text-align: center;
+  margin-top: 5vh;
+  animation: bounceIn 1s;
+  text-shadow: 2px 2px 4px #00000057;
+}
+
+.date-container{
+  background-color:rgba(7, 131, 156, 0.781);
+  width:60vw;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1%;
+  animation: bounceIn 1.5s;
+}
+
+.date-picker1{
+  display: inline-block;
+  margin: 1%;
+  margin-left:5%;
+}
+
+.date-picker2{
+  display: inline-block;
+  margin-left:5%;
+}
+
+.events-button{
+  margin-left: 5%;
+}
+
+.event-container{
+  margin: 0 auto;
+  margin-top: 5%;
+  width: 75vw;
+  height:65vh;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.699);
+  overflow: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation: bounceIn 1.5s;
+}
+
+.event-table{
+  width:70vw;
+  margin: 2%;
+}
+
+th{
+  padding:5px
+}
+
+.header-row{
+  border-bottom: 2px solid rgba(0, 0, 0, 0.171)
+}
+
+.event-border{
+  border-right: 2px solid rgba(0, 0, 0, 0.171)
+}
